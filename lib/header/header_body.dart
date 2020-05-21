@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
 
 class HeaderBody extends StatelessWidget {
   final bool isMobile;
@@ -33,26 +34,27 @@ class HeaderBody extends StatelessWidget {
         ),
         SizedBox(height: isMobile ?? false ? 20 : 40),
         FlatButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(7),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(7),
+            ),
+          ),
+          color: Colors.redAccent,
+          onPressed: () {},
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: isMobile ?? false ? 10 : 17,
+              horizontal: isMobile ?? false ? 8 : 15,
+            ),
+            child: Text(
+              'Contact Me',
+              style: TextStyle(
+                fontSize: isMobile ?? false ? 20 : 24,
+                color: Colors.white,
               ),
             ),
-            color: Colors.redAccent,
-            onPressed: () {},
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: isMobile ?? false ? 10 : 17,
-                horizontal: isMobile ?? false ? 8 : 15,
-              ),
-              child: Text(
-                'Contact Me',
-                style: TextStyle(
-                  fontSize: isMobile ?? false ? 20 : 24,
-                  color: Colors.white,
-                ),
-              ),
-            )),
+          ),
+        ).showCursorOnHover,
       ],
     );
   }
