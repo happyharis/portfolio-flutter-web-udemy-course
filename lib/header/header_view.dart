@@ -28,6 +28,9 @@ class HeaderDesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final isSmall = width < 950;
+    final imageWidth = width * 0.47;
     return Container(
       height: 864,
       width: 1507,
@@ -38,8 +41,9 @@ class HeaderDesktopView extends StatelessWidget {
             Expanded(
               child: HeaderBody(),
             ),
-            FlutterLogo(
-              size: 300,
+            Image.asset(
+              'images/header.png',
+              height: isSmall ? imageWidth : 500,
             )
           ],
         ),
@@ -63,8 +67,7 @@ class HeaderMobileView extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
       child: Column(
         children: [
-          FlutterLogo(size: height * 0.3),
-          Spacer(),
+          Expanded(child: Image.asset('images/header.png')),
           HeaderBody(isMobile: true),
         ],
       ),
