@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_flutter_web/header/header_view.dart';
 import 'package:portfolio_flutter_web/navigation_bar/navigation_bar_view.dart';
+import 'package:portfolio_flutter_web/project/project_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 void main() {
@@ -16,6 +18,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: TextTheme(
+          headline2: GoogleFonts.montserrat(
+            color: Colors.black,
+          ),
+          headline4: GoogleFonts.montserrat(
+            fontSize: 30,
+            color: Colors.black,
+          ),
+        ),
       ),
       home: PortfolioView(),
     );
@@ -38,6 +49,7 @@ class PortfolioView extends StatelessWidget {
           children: [
             NavigationBarView(),
             HeaderView(),
+            ProjectView(),
             Container(height: height, width: width, color: Colors.blue),
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter_web/constants.dart';
 import 'package:portfolio_flutter_web/header/header_body.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -33,7 +34,7 @@ class HeaderDesktopView extends StatelessWidget {
     final imageWidth = width * 0.47;
     return Container(
       height: 864,
-      width: 1507,
+      width: kInitWidth,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Row(
