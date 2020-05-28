@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter_web/constants.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
 
@@ -32,7 +33,7 @@ class NavigationBarView extends StatelessWidget {
         return Container(
           height: 100,
           width: 1507,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: kScreenPadding,
           child: Row(
             children: [
               Image.asset(
