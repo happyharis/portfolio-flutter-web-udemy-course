@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_flutter_web/drawer/drawer_view.dart';
+import 'package:portfolio_flutter_web/experience/experience_view.dart';
 import 'package:portfolio_flutter_web/header/header_view.dart';
 import 'package:portfolio_flutter_web/navigation_bar/navigation_bar_view.dart';
 import 'package:portfolio_flutter_web/project/project_view.dart';
@@ -56,6 +57,7 @@ class PortfolioView extends StatelessWidget {
             HeaderView(),
             ProjectView(),
             SkillsView(),
+            ExperienceView(),
             Container(height: height, width: width, color: Colors.blue),
           ],
         ),
