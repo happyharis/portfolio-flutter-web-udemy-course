@@ -48,6 +48,7 @@ class ExperienceDesktopView extends StatelessWidget {
               ),
           ],
         ),
+        SizedBox(height: 70),
       ],
     );
   }

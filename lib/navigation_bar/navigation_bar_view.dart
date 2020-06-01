@@ -80,7 +80,7 @@ class NavigationItem {
 final kNavigationItems = [
   NavigationItem('Projects'),
   NavigationItem('Skills'),
-  NavigationItem('About Me'),
+  NavigationItem('Experiences'),
   NavigationItem('Blog'),
 ];
 

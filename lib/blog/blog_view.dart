@@ -12,12 +12,13 @@ class BlogView extends StatelessWidget {
   static const title = 'Blog';
   @override
   Widget build(BuildContext context) {
-    return FutureProvider<List<RssItem>>(
-        create: (_) => getArticles(),
-        child: MobileDesktopViewBuilder(
-          mobileView: BlogMobileView(),
-          desktopView: BlogDesktopView(),
-        ));
+    return FutureProvider(
+      create: (_) => getArticles(),
+      child: MobileDesktopViewBuilder(
+        mobileView: BlogMobileView(),
+        desktopView: BlogDesktopView(),
+      ),
+    );
   }
 }
 

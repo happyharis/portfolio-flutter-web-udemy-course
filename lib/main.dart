@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_flutter_web/blog/blog_view.dart';
 import 'package:portfolio_flutter_web/drawer/drawer_view.dart';
 import 'package:portfolio_flutter_web/experience/experience_view.dart';
 import 'package:portfolio_flutter_web/header/header_view.dart';
@@ -45,7 +46,7 @@ class PortfolioView extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     final ScrollController scrollController = ScrollController(
-      initialScrollOffset: 1750,
+      initialScrollOffset: 2500,
     );
     return Scaffold(
       endDrawer: DrawerView(),
@@ -58,6 +59,7 @@ class PortfolioView extends StatelessWidget {
             ProjectView(),
             SkillsView(),
             ExperienceView(),
+            BlogView(),
             Container(height: height, width: width, color: Colors.blue),
           ],
         ),
