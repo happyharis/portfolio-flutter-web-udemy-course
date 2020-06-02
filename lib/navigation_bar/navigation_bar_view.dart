@@ -99,14 +99,17 @@ class NavigationBarItem extends StatelessWidget {
     final isSmall = MediaQuery.of(context).size.width < 650;
     return Container(
       padding: const EdgeInsets.only(left: 64),
-      child: GestureDetector(
+      child: InkWell(
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        splashColor: Colors.transparent,
         onTap: onPressed,
         child: Text(
           text,
           style: TextStyle(
             fontSize: isSmall ? 17 : 24,
           ),
-        ).showCursorOnHover,
+        ),
       ),
     );
   }

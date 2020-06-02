@@ -55,7 +55,7 @@ class HeaderBody extends StatelessWidget {
               ),
             ),
           ),
-        ).showCursorOnHover.moveUpOnHover,
+        ).moveUpOnHover
       ],
     );
   }

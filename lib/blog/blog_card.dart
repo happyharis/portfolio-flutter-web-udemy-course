@@ -17,7 +17,10 @@ class BlogCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      splashColor: Colors.transparent,
       onTap: () => launch(article.link),
       child: Card(
         elevation: 3,
@@ -60,8 +63,8 @@ class BlogCard extends StatelessWidget {
             )
           ],
         ),
-      ),
-    ).showCursorOnHover.moveUpOnHover;
+      ).moveUpOnHover,
+    );
   }
 }
 
