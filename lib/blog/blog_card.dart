@@ -21,6 +21,7 @@ class BlogCard extends StatelessWidget {
       highlightColor: Colors.transparent,
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,
+      mouseCursor: MaterialStateMouseCursor.clickable,
       onTap: () => launch(article.link),
       child: Card(
         elevation: 3,

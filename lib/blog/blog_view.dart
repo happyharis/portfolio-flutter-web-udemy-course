@@ -9,6 +9,9 @@ import 'package:provider/provider.dart';
 import 'package:webfeed/webfeed.dart';
 
 class BlogView extends StatelessWidget {
+  const BlogView({
+    Key key,
+  }) : super(key: key);
   static const title = 'Blog';
   @override
   Widget build(BuildContext context) {

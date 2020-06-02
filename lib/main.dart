@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio_flutter_web/blog/blog_view.dart';
-import 'package:portfolio_flutter_web/drawer/drawer_view.dart';
-import 'package:portfolio_flutter_web/experience/experience_view.dart';
-import 'package:portfolio_flutter_web/header/header_view.dart';
-import 'package:portfolio_flutter_web/navigation_bar/navigation_bar_view.dart';
-import 'package:portfolio_flutter_web/project/project_view.dart';
-import 'package:portfolio_flutter_web/skills/skills_view.dart';
+import 'package:portfolio_flutter_web/portfolio/portfolio_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,38 +26,6 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: PortfolioView(),
-    );
-  }
-}
-
-class PortfolioView extends StatelessWidget {
-  const PortfolioView({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-    final ScrollController scrollController = ScrollController(
-      initialScrollOffset: 2500,
-    );
-    return Scaffold(
-      endDrawer: DrawerView(),
-      body: SingleChildScrollView(
-        controller: scrollController,
-        child: Column(
-          children: [
-            NavigationBarView(),
-            HeaderView(),
-            ProjectView(),
-            SkillsView(),
-            ExperienceView(),
-            BlogView(),
-            Container(height: height, width: width, color: Colors.blue),
-          ],
-        ),
-      ),
     );
   }
 }

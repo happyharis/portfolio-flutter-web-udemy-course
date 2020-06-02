@@ -5,6 +5,9 @@ import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
 import 'package:portfolio_flutter_web/skills/outline_skills_container.dart';
 
 class SkillsView extends StatelessWidget {
+  const SkillsView({
+    Key key,
+  }) : super(key: key);
   static const title = 'Skills';
   @override
   Widget build(BuildContext context) {

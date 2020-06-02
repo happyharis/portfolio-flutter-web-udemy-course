@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/constants.dart';
-import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
+import 'package:portfolio_flutter_web/portfolio/portfolio_view.dart';
+import 'package:provider/provider.dart';
 
 class NavigationBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final onPressed = () => print('click');
     return MobileDesktopViewBuilder(
       mobileView: NavigationMobileView(),
-      desktopView: NavigationDesktopView(onPressed: onPressed),
+      desktopView: NavigationDesktopView(),
     );
   }
 }
@@ -17,13 +17,12 @@ class NavigationBarView extends StatelessWidget {
 class NavigationDesktopView extends StatelessWidget {
   const NavigationDesktopView({
     Key key,
-    @required this.onPressed,
   }) : super(key: key);
-
-  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
+    final navigationItems = context.watch<List<NavigationItem>>();
+    final scrollController = context.watch<ScrollController>();
     return Container(
       height: 100,
       width: 1507,
@@ -35,8 +34,17 @@ class NavigationDesktopView extends StatelessWidget {
             height: 30,
           ),
           Spacer(),
-          for (var item in kNavigationItems)
-            NavigationBarItem(onPressed: onPressed, text: item.text),
+          for (var item in navigationItems)
+            NavigationBarItem(
+              onPressed: () {
+                scrollController.animateTo(
+                  item.position,
+                  duration: Duration(milliseconds: 700),
+                  curve: Curves.easeInOut,
+                );
+              },
+              text: item.text,
+            ),
         ],
       ),
     );
@@ -71,19 +79,6 @@ class NavigationMobileView extends StatelessWidget {
   }
 }
 
-class NavigationItem {
-  final String text;
-
-  NavigationItem(this.text);
-}
-
-final kNavigationItems = [
-  NavigationItem('Projects'),
-  NavigationItem('Skills'),
-  NavigationItem('Experiences'),
-  NavigationItem('Blog'),
-];
-
 class NavigationBarItem extends StatelessWidget {
   const NavigationBarItem({
     Key key,
@@ -100,6 +95,7 @@ class NavigationBarItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 64),
       child: InkWell(
+        mouseCursor: MaterialStateMouseCursor.clickable,
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
         splashColor: Colors.transparent,
