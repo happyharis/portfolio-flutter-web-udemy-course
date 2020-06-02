@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_flutter_web/blog/blog_view.dart';
 import 'package:portfolio_flutter_web/drawer/drawer_view.dart';
 import 'package:portfolio_flutter_web/experience/experience_view.dart';
+import 'package:portfolio_flutter_web/footer/footer_view.dart';
 import 'package:portfolio_flutter_web/header/header_view.dart';
 import 'package:portfolio_flutter_web/navigation_bar/navigation_bar_view.dart';
 import 'package:portfolio_flutter_web/portfolio/back_to_top_button.dart';
@@ -43,7 +44,6 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
     return MultiProvider(
@@ -57,18 +57,21 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
       ],
       child: Scaffold(
         endDrawer: DrawerView(),
-        body: SingleChildScrollView(
-          controller: scrollController,
-          child: Column(
-            children: [
-              NavigationBarView(),
-              HeaderView(),
-              ProjectView(key: projectKey),
-              SkillsView(key: skillsKey),
-              ExperienceView(key: experienceKey),
-              BlogView(key: blogKey),
-              Container(height: height, width: width, color: Colors.blue),
-            ],
+        body: SizedBox(
+          width: width,
+          child: SingleChildScrollView(
+            controller: scrollController,
+            child: Column(
+              children: [
+                NavigationBarView(),
+                HeaderView(),
+                ProjectView(key: projectKey),
+                SkillsView(key: skillsKey),
+                ExperienceView(key: experienceKey),
+                BlogView(key: blogKey),
+                FooterView(),
+              ],
+            ),
           ),
         ),
         floatingActionButton: BackToTopButton(),

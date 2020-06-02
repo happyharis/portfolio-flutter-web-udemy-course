@@ -38,7 +38,8 @@ class BlogDesktopView extends StatelessWidget {
             for (final article in articles)
               Expanded(child: BlogCard(article: article))
           ],
-        )
+        ),
+        SizedBox(height: 100),
       ],
     );
   }
