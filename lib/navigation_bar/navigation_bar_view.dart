@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
 
 class NavigationBarView extends StatelessWidget {
   @override
@@ -78,14 +77,18 @@ class NavigationBarItem extends StatelessWidget {
     final isSmall = MediaQuery.of(context).size.width < 650;
     return Container(
       padding: const EdgeInsets.only(left: 64),
-      child: GestureDetector(
+      child: InkWell(
         onTap: onPressed,
+        mouseCursor: MaterialStateMouseCursor.clickable,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        splashColor: Colors.transparent,
         child: Text(
           text,
           style: TextStyle(
             fontSize: isSmall ? 17 : 24,
           ),
-        ).showCursorOnHover,
+        ),
       ),
     );
   }
