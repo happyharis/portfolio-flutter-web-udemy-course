@@ -33,13 +33,15 @@ class HeaderBody extends StatelessWidget {
           maxLines: 3,
         ),
         SizedBox(height: isMobile ?? false ? 20 : 40),
-        FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(7),
+        TextButton(
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(7),
+              ),
             ),
+            backgroundColor: Colors.redAccent,
           ),
-          color: Colors.redAccent,
           onPressed: () {},
           child: Padding(
             padding: EdgeInsets.symmetric(
